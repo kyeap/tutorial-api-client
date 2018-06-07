@@ -6,13 +6,13 @@ Welcome to the aedifion API example!
 
 Please contact support@aedifion.com for **personalized login credentials** in order to use the aedifion APIs!
 
-This tutorial demonstrates how you can use the aedifion http API within your programming environment. Since there are many ways how to interact with a http API, these are examples how to
+This tutorial demonstrates how you can use the aedifion http API within your programming environment. Since there are many ways how to interact with a http API, below are some examples how to:
 - use the aedifion Excel plug-in to import, resample and plot timeserieses to/within Microsoft Excel
 - use the graphical aedifion API user interface
 - use cURL
 - use MATLAB `webread`
 - use Python with `requests` library
-- export API clients for several programming environments form [Swagger Editor](https://swagger.io/swagger-editor/)
+- export API clients for several programming environments form,(?) [Swagger Editor](https://swagger.io/swagger-editor/)
 - include a Python client generated with [Swagger Codegen](https://swagger.io/swagger-codegen/)
 
 among many other ways to interact with the aedifion API.
@@ -21,13 +21,14 @@ among many other ways to interact with the aedifion API.
 The aedifion Excel plug-in can be downloaded at https://github.com/aedifion/aedifion-excel-plugin. Please follow the instructions provided in the download repository to install the plug-in to your Microsoft Excel. The aedifion plug-in will add a new ribbon to your Excel. Just click the ribbon and you can import timeseries data to your Excel sheets and own Excel tools right away.
 
 ## Use the graphical aedifion API user interface
-The graphical user interface is designed to give a fast introduction to the aedifion API and give you a fast access to your data.
+The graphical user interface is designed to give you a fast introduction to the aedifion API and a fast access to your data.
 1. Visit https://api.aedifion.io/ui/
-2. Click `Authorize` at the right top and insert your user login credentials. **Note:** Make sure you inserted the correct user credentials since the graphical interface will not check them and will give an `Basic authentication - authorized` feedback anyways. The easiest way to check if you inserted the correct data is trying the https://api.aedifion.io/ui/#!/User/get_token endpoint.
-3. The aedifion API endpoints are sorted by the categories *User*, *Project* and *Datapoints*. A good starting point for first time users is to click on
-*User* and try `/v2/user/projects`. After you chose the endpoint click the button *Try it out!*. The endpoint will show you the http request made
-for querying the endpoint, the returned answer and a cURL request which could be used to query the API using cURL. If you are interested in cURL have a look at the following section.
-4. Try as many endpoints as you like!
+2. Click `Authorize` at the right top and insert your user login credentials. **Note:** Make sure you have inserted the correct user credentials since the graphical interface will not check them and will give a `Basic authentication - authorized` feedback anyways. The easiest way to check if you have inserted the correct data is by trying the https://api.aedifion.io/ui/#!/User/get_token endpoint.
+3. The aedifion API endpoints are sorted by the categories *User*, *Project* and *Datapoints*. A good starting point for first time users is to: 
+	a. click on *User* and try `/v2/user/projects`. 
+	b. After you chose the endpoint, click the button *Try it out!*. 
+The endpoint will show you the http response? made for querying the endpoint. The returned answer and a cURL request which could be used to query the API using cURL. If you are interested in cURL, have a look at the following sections.
+4. Try out as many endpoints as you like!
 
 ## Use cURL
 [cURL](https://curl.haxx.se/) stands for "client for URL". It is a command line tool and library
@@ -36,12 +37,12 @@ There are cURL libraries for many different operating systems available e.g. at 
 
 ### cURL with Windows
 
-1. Download cURL e.g. from the [cURL project website](https://curl.haxx.se/download.html) to your computer. The [download wizard](https://curl.haxx.se/dlwiz/) will help you to pick the right version for your Windows.
+1. Download cURL e.g. from the [cURL project website](https://curl.haxx.se/download.html) to your computer. The [download wizard](https://curl.haxx.se/dlwiz/) will help you pick the right version for your Windows.
 2. Unpack the .zip file.
 3. Now there are two options how to run curl:
     1. (recommended) Add an *environment variable* to the path of *curl.exe* in order to directly address this executable by `curl` in the command line (e.g the path you saved curl to might be `C:\Program Files\curl\bin\curl.exe` - depends on curl distribution and storage path).
-        - In order to use cURL open the Windows command line and try the aedifion API with the examples below.
-	2. Run curl directly form the folder you downloaded curl to:
+        - In order to use cURL, open the Windows command line and try the aedifion API with the examples below.
+	2. Run curl directly form the folder you have downloaded curl to.
         - Open the Windows command line
         - change the working directory to the path you saved cURL to, e.g. `C:\Program Files\<path>\bin\curl.exe` while `<path>` depends on cURL distribution and storage path.
             - First change to the correct hard drive partition: e.g. `D:`
@@ -60,7 +61,7 @@ There are cURL libraries for many different operating systems available e.g. at 
 		- You can use these commands copy-paste. **NOTE:** On Windows you need to substitute the single quotes by double quotes. Your user credentials are included in the argument `--header 'Authorization: Basic <basic auth encrypted user credentials>'`.
 	
 ## MATLAB `webread`
-MATLAB contains the `webread` function which allows to interact with http APIs. This tutorial gives a functional example of how to use webread to import time series to MATLAB by interacting with the aedifion API.
+MATLAB contains the `webread` function which allows MATLAB? to interact with http APIs. This tutorial gives a functional example of how to use webread to import time series to MATLAB by interacting with the aedifion API.
 1. Download the two MATLAB files (resample.m and queryTimeseriesAedifion.m).
 2. Parametrize the variables in the resampling.m file. Example values are given in the comments of the script.
 3. Run the script.
@@ -76,18 +77,18 @@ There are many ways to interact with http APIs from Python. One of them is by us
 4. The script executes exemplary get/post/put/delete interactions with the aedifion API and prints the results to the python console.
 5. Try to interact with other aedifion endpoints from Python by adding own implementations.
 			
-## Export API clients for several programming environments form [Swagger Editor](https://swagger.io/swagger-editor/)
-There is an online version of the swagger editor as well as an downloadable one. This tutorial is using the [online editor](https://editor.swagger.io/).
-1. Download `aedifion.yaml` file.
+## Export API clients for several programming environments form,(?) [Swagger Editor](https://swagger.io/swagger-editor/)
+There is an online version of the swagger editor as well as a downloadable one. This tutorial is using the [online editor](https://editor.swagger.io/).
+1. Download the `aedifion.yaml` file.
 2. Go to https://editor.swagger.io/
-3. Upload the `aedifion.yaml` by clicking on *File* -> *Import File* and insert the path to the `aedifion.yaml` file. In case you want to generate a client for the development API, please change `host:` to `api-dev.aedifion.io`.
-4. Now you can export an API client by *Generate Client* -> choose an export you prefer.
+3. Upload `aedifion.yaml` by clicking on *File* -> *Import File* and insert the path to the `aedifion.yaml` file. In case you want to generate a client for the development API, please change `host:` to `api-dev.aedifion.io`.
+4. Now you can export API client by *Generate Client* -> choose an export you prefer.
 5. [Swagger Codegen](https://swagger.io/swagger-codegen/) will automaticly generate a API client. Download and safe the exported client. Please follow the instructions in `README.md` file, which is included in the downloaded folder, in order to embed the API client in your programming environment. The next section will explain how to include a Python API client.
 
 ## Include a Python client generated with [Swagger Codegen](https://swagger.io/swagger-codegen/)
 
 This tutorial will explain how to include a Python client for the aedifion API which is generated using [Swagger Codegen](https://swagger.io/swagger-codegen/). 
-The Swagger Codgen export will contain a generically generated `README.md`file. The further tutorial will be based on this and any manual comments, notations and hints are written in **_bold italics_**.  In case you want to use the client for the development API, please follow the tutorial and install the regular client. Please change the `host` varibale in `configurations.py` to `api-dev.aedifion.io`. The file can be found at your Python installation path at `<Python path>/Lib/site-packages/swagger-client/`.
+The Swagger Codgen export will contain a generically generated `README.md`file. The further tutorial? will be based on this? and any manual comments, notations and hints are written in **_bold italics_**.  In case you want to use the client for the development API, please follow the tutorial and install the regular client. Please change the `host` varibale in `configurations.py` to `api-dev.aedifion.io`. The file can be found at your Python installation path at `<Python path>/Lib/site-packages/swagger-client/`.
 
 ### swagger-client
 **_General information on the aedifion API from https://api.aedifion.io/ui/ :_**
@@ -278,4 +279,4 @@ support@aedifion.com
 
 ### aedifion API Python client
 The aedifion API Python client (`aedifion-api-client.py`) is an example how to use the generic Swagger Codegan code and add individual functionality e.g. asking for an input of login credentials as soon as a token is requested. **Please install the aedifion API client first!**
-Several calls of the aedifion API are implemented including exemplary API input parameters. In order to query every API endpoint one-by-one, some are commented out. They can be reactivated to try these endpoints. **Please feel free to give the aedifion-api-client.py a try!**
+Several calls of the aedifion API are implemented including exemplary API input parameters. In order to query every API endpoint one-by-one, some are commented out what are commented out? . They can be reactivated to try these endpoints? . **Please feel free to give the aedifion-api-client.py a try!**
